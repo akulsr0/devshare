@@ -1,0 +1,21 @@
+{
+  "name": "devshare-client",
+  "version": "1.0.0",
+  "description": "A webapp to showcase opensource projects.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start",
+    "export": "next export",
+    "deploy": "npm run build && npm run export"
+  },
+  "author": "Akul Srivastava",
+  "license": "MIT",
+  "dependencies": {
+    "bootstrap": "^4.4.1",
+    "next": "^9.3.6",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  }
+}

@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800;900&display=swap');
+
+body {
+    overflow-x: hidden;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Nunito Sans';
+}
+
+h2,
+h4 {
+    margin: 0;
+    padding: 0;
+}
+
+.top-content {
+    width: 100%;
+    background-color: #BFDAFF;
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.menu-items {
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    align-items: center;
+}
+
+.login-header-div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.menu-div {
+    display: none;
+}
+
+.top-content-div {
+    margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-bottom: 30px;
+}
+
+
+.feature-image {
+    width: 400px;
+    height: 450px;
+    position: absolute;
+
+}
+
+.black-button {
+    width: fit-content;
+    background-color: black;
+    color: white;
+    padding: 4px 20px;
+    outline: none;
+    border: none;
+    border-radius: 20px;
+    align-self: center;
+}
+
+@media only screen and (max-width: 1150px) {
+    .feature-image {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 992px) {
+    .menu-items {
+        display: none;
+    }
+
+    .login-header-div {
+        display: none;
+    }
+
+    .header-title-div {
+
+        flex: 1;
+    }
+
+    .menu-div {
+        display: block;
+    }
+
+    .menu-image {
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+    }
+
+}
