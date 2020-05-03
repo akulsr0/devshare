@@ -72,6 +72,30 @@ h4 {
     align-self: center;
 }
 
+.categories-view-heading {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.categories-items-view {
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+    overflow-x: scroll;
+}
+
+.category-item {
+    min-height: 120px;
+    min-width: 120px;
+    border-radius: 10px;
+    background-color: #f1f3f6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
 @media only screen and (max-width: 1150px) {
     .feature-image {
         display: none;

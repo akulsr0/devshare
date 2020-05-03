@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import BlackButton from '../components/BlackButton';
 import Header from '../components/Header';
+import CategoriesView from '../components/CategoriesView';
 
 const Index = () => {
   return (
@@ -48,6 +49,8 @@ const Index = () => {
           />
         </div>
       </div>
+      <br />
+      <CategoriesView />
     </div>
   );
 };
