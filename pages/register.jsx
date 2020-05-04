@@ -3,6 +3,7 @@ import Head from 'next/head';
 
 const Register = (props) => {
   return (
+    // comment
     <>
       <Head>
         <title>DevShare: Registeration</title>
