@@ -1,4 +1,5 @@
 import BlackButton from './BlackButton';
+import { OverlayTrigger, Popover, Button } from 'react-bootstrap';
 
 const Header = () => {
   return (
@@ -17,11 +18,31 @@ const Header = () => {
         <BlackButton title='Login/SignUp'></BlackButton>
       </div>
       <div className='menu-div'>
-        <img
-          src='https://img.icons8.com/ios-filled/50/000000/menu.png'
-          className='menu-image'
-        />
-        <div className='menu-content'></div>
+        <OverlayTrigger
+          trigger='click'
+          key='bottom'
+          placement='bottom'
+          className='menu-content'
+          overlay={
+            <Popover className='menu-content' id={`popover-positioned-bottom`}>
+              <Popover.Content className='menu-content '>
+                <h6>Projects</h6>
+                <h6>Categories</h6>
+                <h6>Developers</h6>
+                <h6>About Us</h6>
+                <h6>Contact Us</h6>
+                <BlackButton title='Login/SignUp'></BlackButton>
+              </Popover.Content>
+            </Popover>
+          }
+        >
+          <Button variant='none'>
+            <img
+              src='https://img.icons8.com/ios-filled/50/000000/menu.png'
+              className='menu-image'
+            />
+          </Button>
+        </OverlayTrigger>
       </div>
     </div>
   );
