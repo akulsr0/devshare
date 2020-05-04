@@ -10,10 +10,10 @@ const Index = () => {
       <Head>
         <title>DevShare</title>
       </Head>
-      <div className='top-content'>
+      <div className="top-content">
         <Header />
-        <div className='top-content-div'>
-          <div className='top-content-text-div'>
+        <div className="top-content-div">
+          <div className="top-content-text-div">
             <h1 style={{ fontWeight: 800, textAlign: 'center' }}>
               All in one place to showcase your projects.
             </h1>
@@ -29,11 +29,11 @@ const Index = () => {
               developer community to get the perfect audience.
             </h5>
           </div>
-          <BlackButton title='Get Started'></BlackButton>
+          <BlackButton title="Get Started"></BlackButton>
           <img
-            src='https://assets-ouch.icons8.com/download/301/f5eb9da0-37ec-451c-b83e-5c3754e96414.svg?filename=clip-programming.svg'
-            className='feature-image'
-            alt=''
+            src="https://assets-ouch.icons8.com/download/301/f5eb9da0-37ec-451c-b83e-5c3754e96414.svg?filename=clip-programming.svg"
+            className="feature-image"
+            alt=""
           />
         </div>
       </div>
