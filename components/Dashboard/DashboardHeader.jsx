@@ -1,11 +1,15 @@
 import BlackButton from '../BlackButton';
 import { OverlayTrigger, Popover, Button } from 'react-bootstrap';
+import Router from 'next/router';
+import Link from 'next/link';
 
 const DashboardHeader = (props) => {
   return (
     <div className="header container pt-2">
       <div className="header-title-div">
-        <h2 style={{ fontWeight: 800 }}>DevShare</h2>
+        <Link href="/">
+          <h2 style={{ fontWeight: 800 }}>DevShare</h2>
+        </Link>
       </div>
       <div className="menu-items px-2">
         <h6 className="pl-3">Projects</h6>

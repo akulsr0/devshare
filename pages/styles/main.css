@@ -11,6 +11,30 @@ body {
   font-family: 'Nunito Sans';
 }
 
+.light {
+  font-weight: 300;
+}
+
+.regular {
+  font-weight: 400;
+}
+
+.semi-bold {
+  font-weight: 600;
+}
+
+.bold {
+  font-weight: 700;
+}
+
+.extra-bold {
+  font-weight: 800;
+}
+
+.extraa-bold {
+  font-weight: 900;
+}
+
 h2,
 h4 {
   margin: 0;
@@ -153,7 +177,8 @@ h4 {
   .menu-content {
     display: block;
   }
-  .register-card{
+
+  .register-card {
     width: 90%;
   }
 
