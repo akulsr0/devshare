@@ -114,6 +114,13 @@ h4 {
   padding: 0px 10px;
 }
 
+
+.registerbox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 @media only screen and (max-width: 1150px) {
   .feature-image {
     display: none;
