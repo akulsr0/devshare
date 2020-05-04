@@ -113,11 +113,12 @@ h4 {
   align-self: center;
   padding: 0px 10px;
 }
-.registerbox{
+.registerbox {
   display: flex;
   align-items: center;
   justify-content: center;
 }
+
 
 @media only screen and (max-width: 1150px) {
   .feature-image {
@@ -151,4 +152,11 @@ h4 {
   .menu-content {
     display: block;
   }
+  .register-card{
+    width: 90%;
+  }
+
+
+
+
 }
