@@ -10,7 +10,7 @@ const CategoryBox = (props) => {
     );
   } else {
     return (
-      <div className='category-item ml-4'>
+      <div className='category-item ml-2'>
         <img src={props.link} />
         <h6 className='mt-4' style={{ fontWeight: 600 }}>
           {props.name}

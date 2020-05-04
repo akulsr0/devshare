@@ -70,13 +70,15 @@ h4 {
   align-self: center;
 }
 
-.categories-view-heading {
+.categories-view-heading,
+.dev-view-heading {
   display: flex;
   flex-direction: row;
   align-items: center;
 }
 
-.categories-items-view {
+.categories-items-view,
+.dev-items-view {
   display: flex;
   flex-direction: row;
   margin-top: 10px;
@@ -92,10 +94,24 @@ h4 {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
+}
+
+.dev-box {
+  min-height: 120px;
+  min-width: 120px;
+  border-radius: 10px;
+  cursor: pointer;
 }
 
 .menu-content {
   display: none;
+}
+
+.top-content-text-div {
+  max-width: 500px;
+  align-self: center;
+  padding: 0px 10px;
 }
 
 @media only screen and (max-width: 1150px) {
@@ -126,6 +142,7 @@ h4 {
     height: 30px;
     cursor: pointer;
   }
+
   .menu-content {
     display: block;
   }

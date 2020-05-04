@@ -26,11 +26,13 @@ const Header = () => {
           overlay={
             <Popover className='menu-content' id={`popover-positioned-bottom`}>
               <Popover.Content className='menu-content '>
-                <h6>Projects</h6>
-                <h6>Categories</h6>
-                <h6>Developers</h6>
-                <h6>About Us</h6>
-                <h6>Contact Us</h6>
+                <h6 style={{ fontWeight: 300 }}>Projects</h6>
+                <h6 style={{ fontWeight: 300 }}>Categories</h6>
+                <h6 style={{ fontWeight: 300 }}>Developers</h6>
+                <h6 style={{ fontWeight: 300 }}>About Us</h6>
+                <h6 style={{ fontWeight: 300, marginBottom: 12 }}>
+                  Contact Us
+                </h6>
                 <BlackButton title='Login/SignUp'></BlackButton>
               </Popover.Content>
             </Popover>
