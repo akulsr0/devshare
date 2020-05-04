@@ -1,13 +1,14 @@
-import { OverlayTrigger, Popover, Button } from "react-bootstrap";
-import Head from "next/head";
+import { OverlayTrigger, Popover, Button } from 'react-bootstrap';
+import Head from 'next/head';
 
 const Register = (props) => {
   return (
+    // comment
     <>
       <Head>
         <title>DevShare: Registeration</title>
       </Head>
-      <div style={{ backgroundColor: "#bfdaff" }}>
+      <div style={{ backgroundColor: '#bfdaff' }}>
         <div className="header container pt-2">
           <div className="header-title-div">
             <h2 style={{ fontWeight: 800 }}>DevShare</h2>
@@ -51,15 +52,121 @@ const Register = (props) => {
             </OverlayTrigger>
           </div>
         </div>
+      </div>
+      <div className="mt-4">
         <center>
-          <h2 className="mt-2" style={{ fontWeight: 800 }}>
-            Welcome to DevShare
-          </h2>
-        </center>
-        <br></br>
+          <h2 style={{ fontWeight: 800 }}>Welcome to DevShare</h2></center>
+          {/* REGISTERATION FORM HERE */}
+          <div className="registerbox">
+            <div
+              className="card"
+              style={{
+                width: '60%',
+                height: 'fitContent',
+                backgroundColor: 'white',
+              }}
+            >
+              <div className="card-body">
+                <form>
+                  <div className="form-group">
+                    <label for="name">Name</label>
+                    <input
+                      type="text"
+                      className="form-control"
+                      id="name"
+                      placeholder="John Doe"
+                    />
+                  </div>
+                  <div className="form-group">
+                    <label for="username">User Name</label>
+                    <input
+                      type="text"
+                      className="form-control"
+                      id="username"
+                      placeholder="Github User Name"
+                    />
+                  </div>
+                  <div className="form-group">
+                    <label for="email">Email address</label>
+                    <input
+                      type="email"
+                      className="form-control"
+                      id="email"
+                      placeholder="name@example.com"
+                    />
+                  </div>
+                  <div className="form-group">
+                    <label for="password">Password</label>
+                    <input
+                      type="password"
+                      className="form-control"
+                      id="password"
+                      placeholder="Enter Password"
+                    />
+                  </div>
+                  <div className="form-group">
+                    <label for="cnfpassword">Confirm Password</label>
+                    <input
+                      type="password"
+                      className="form-control"
+                      id="cnfpassword"
+                      placeholder="Password Again"
+                    />
+                  </div>
+                  <label>Gender</label>
+                  <div className="form-check">
+                    <input
+                      className="form-check-input"
+                      type="radio"
+                      name="gender"
+                      id="male"
+                      value="option1"
+                      checked
+                    />
+                    <label className="form-check-label" for="male">
+                      Male
+                    </label>
+                  </div>
+                  <div className="form-check">
+                    <input
+                      className="form-check-input"
+                      type="radio"
+                      name="gender"
+                      id="female"
+                      value="option2"
+                    />
+                    <label className="form-check-label" for="female">
+                      Female
+                    </label>
+                  </div>
+                  <br></br>
+                  <div className="form-group">
+                    <label for="language">Prefred Language</label>
+                    <select className="form-control" id="language">
+                      <option>--Select--</option>
+                      <option>Python</option>
+                      <option>JavaScript</option>
+                      <option>Java</option>
+                      <option>Ruby</option>
+                    </select>
+                  </div>
+                  <div>
+                    <center>
+                      <button type="submit" class="btn btn-primary">
+                        Sign Up
+                      </button>
+                    </center>
+                  </div>
+                </form>
+                <div>
+                  <b>Already a User</b>
+                  <a>Sign In</a>
+                </div>
               </div>
+            </div>
+          </div>
+      </div>
     </>
   );
 };
-
 export default Register;
