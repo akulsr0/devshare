@@ -8,29 +8,29 @@ const Register = (props) => {
         <title>DevShare: Registeration</title>
       </Head>
       <div style={{ backgroundColor: '#bfdaff' }}>
-        <div className='header container pt-2'>
-          <div className='header-title-div'>
+        <div className="header container pt-2">
+          <div className="header-title-div">
             <h2 style={{ fontWeight: 800 }}>DevShare</h2>
           </div>
-          <div className='menu-items px-2'>
-            <h6 className='pl-3'>Projects</h6>
-            <h6 className='pl-3'>Categories</h6>
-            <h6 className='pl-3'>Developers</h6>
-            <h6 className='pl-3'>About Us</h6>
-            <h6 className='pl-3'>Contact Us</h6>
+          <div className="menu-items px-2">
+            <h6 className="pl-3">Projects</h6>
+            <h6 className="pl-3">Categories</h6>
+            <h6 className="pl-3">Developers</h6>
+            <h6 className="pl-3">About Us</h6>
+            <h6 className="pl-3">Contact Us</h6>
           </div>
-          <div className='menu-div'>
+          <div className="menu-div">
             <OverlayTrigger
-              trigger='click'
-              key='bottom'
-              placement='bottom'
-              className='menu-content'
+              trigger="click"
+              key="bottom"
+              placement="bottom"
+              className="menu-content"
               overlay={
                 <Popover
-                  className='menu-content'
+                  className="menu-content"
                   id={`popover-positioned-bottom`}
                 >
-                  <Popover.Content className='menu-content '>
+                  <Popover.Content className="menu-content ">
                     <h6 style={{ fontWeight: 300 }}>Projects</h6>
                     <h6 style={{ fontWeight: 300 }}>Categories</h6>
                     <h6 style={{ fontWeight: 300 }}>Developers</h6>
@@ -42,19 +42,19 @@ const Register = (props) => {
                 </Popover>
               }
             >
-              <Button variant='none'>
+              <Button variant="none">
                 <img
-                  src='https://img.icons8.com/ios-filled/50/000000/menu.png'
-                  className='menu-image'
+                  src="https://img.icons8.com/ios-filled/50/000000/menu.png"
+                  className="menu-image"
                 />
               </Button>
             </OverlayTrigger>
           </div>
         </div>
+      </div>
+      <div className="mt-4">
         <center>
-          <h2 className='mt-2' style={{ fontWeight: 800 }}>
-            Welcome to DevShare
-          </h2>
+          <h2 style={{ fontWeight: 800 }}>Welcome to DevShare</h2>
           {/* REGISTERATION FORM HERE */}
         </center>
       </div>
