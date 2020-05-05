@@ -46,15 +46,13 @@ const DashboardHeader = ({ user }) => {
             </Popover>
           }
         >
-          <Button variant="none" className="m-0 p-0">
-            <h6 className="ml-2">
-              <img
-                src="https://github.com/akulsr0.png?size=30"
-                alt=""
-                style={{ borderRadius: '50%' }}
-              />
-              {'  ' + user.username + ' ▼'}
-            </h6>
+          <Button variant="none" className="m-0 p-0 mb-2">
+            <img
+              src="https://github.com/akulsr0.png?size=400"
+              alt=""
+              style={{ borderRadius: '50%', width: 30 }}
+            />
+            <strong className="ml-2">{user.username + ' ▼'}</strong>
           </Button>
         </OverlayTrigger>
       </div>
@@ -69,9 +67,9 @@ const DashboardHeader = ({ user }) => {
               <Popover.Content className="menu-content ">
                 {/* UserOptions */}
                 <img
-                  src="https://github.com/akulsr0.png?size=50"
+                  src="https://github.com/akulsr0.png?size=400"
                   alt=""
-                  style={{ borderRadius: '50%' }}
+                  style={{ borderRadius: '50%', width: 30 }}
                 />
                 <h6 style={{ fontWeight: 700, marginTop: 6 }}>{user.name}</h6>
                 <h6 style={{ fontWeight: 300 }}>My Projects</h6>
@@ -88,15 +86,13 @@ const DashboardHeader = ({ user }) => {
             </Popover>
           }
         >
-          <Button variant="none" className="m-0 p-0">
-            <h6 className="ml-2">
-              <img
-                src="https://github.com/akulsr0.png?size=30"
-                alt=""
-                style={{ borderRadius: '50%' }}
-              />
-              {'  ' + user.username + ' ▼'}
-            </h6>
+          <Button variant="none" className="m-0 p-0 mb-2">
+            <img
+              src="https://github.com/akulsr0.png?size=400"
+              alt=""
+              style={{ borderRadius: '50%', width: 30 }}
+            />
+            <strong className="ml-2">{user.username + ' ▼'}</strong>
           </Button>
         </OverlayTrigger>
       </div>

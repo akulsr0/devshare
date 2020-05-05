@@ -1,7 +1,6 @@
 import useSWR from 'swr';
 import fetcher from '../utils/fetcher';
 import Head from 'next/head';
-import BlackButton from '../components/BlackButton';
 import Header from '../components/Header';
 import CategoriesView from '../components/CategoriesView';
 import DevelopersView from '../components/DevelopersView';
@@ -12,11 +11,10 @@ import Router from 'next/router';
 const Index = () => {
   const { data } = useSWR('/api/auth', fetcher);
 
-  if (!data) {
-    return <Loading />;
-  }
-  if (data.user !== null) {
-    return <Dashboard data={data} />;
+  if (data) {
+    if (data.user !== null) {
+      return <Dashboard data={data} />;
+    }
   }
 
   return (
