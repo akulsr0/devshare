@@ -10,8 +10,10 @@ const Header = () => {
           <h2 style={{ fontWeight: 800, cursor: 'pointer' }}>DevShare</h2>
         </Link>
       </div>
-      <div className="menu-items px-2">
-        <h6 className="pl-3">Projects</h6>
+      <div className="menu-items pr-2">
+        <h6 className="pl-3" style={{ cursor: 'pointer' }}>
+          Projects
+        </h6>
         <h6 className="pl-3" style={{ cursor: 'pointer' }}>
           Categories
         </h6>

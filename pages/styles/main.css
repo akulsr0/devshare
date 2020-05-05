@@ -47,12 +47,15 @@ h4 {
 }
 
 .header {
+  height: 60px;
   display: flex;
   flex-direction: row;
   align-items: center;
 }
 
 .menu-items {
+  height: 100%;
+
   display: flex;
   flex: 1;
   flex-direction: row;
@@ -70,7 +73,7 @@ h4 {
 }
 
 .top-content-div {
-  margin-top: 60px;
+  margin-top: 30px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -78,9 +81,11 @@ h4 {
 }
 
 .feature-image {
-  width: 400px;
-  height: 450px;
+  width: 350px;
+  height: 400px;
   position: absolute;
+  top: 60px;
+  left: 60px;
 }
 
 .black-button {
