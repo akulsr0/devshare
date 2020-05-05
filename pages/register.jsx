@@ -30,6 +30,7 @@ const Register = (props) => {
       confirmPassword,
     });
     // FIXME: Gender not fetching
+    //Fixed by changing the values of option1 & 2 to male and female
   };
 
   return (
@@ -121,6 +122,7 @@ const Register = (props) => {
                     id="name"
                     name="name"
                     placeholder="John Doe"
+                    
                     onChange={(e) => setName(e.target.value)}
                   />
                 </div>
@@ -134,6 +136,7 @@ const Register = (props) => {
                     id="username"
                     name="username"
                     placeholder="Github Username"
+                    
                     onChange={(e) => setUsername(e.target.value)}
                   />
                 </div>
@@ -147,6 +150,7 @@ const Register = (props) => {
                     id="bio"
                     name="bio"
                     placeholder="Bio"
+                    
                     onChange={(e) => setBio(e.target.value)}
                   />
                 </div>
@@ -160,6 +164,7 @@ const Register = (props) => {
                     id="email"
                     name="email"
                     placeholder="name@example.com"
+                    
                     onChange={(e) => setEmail(e.target.value)}
                   />
                 </div>
@@ -170,11 +175,11 @@ const Register = (props) => {
                     type="radio"
                     name="gender"
                     id="male"
-                    value="option1"
+                    value="male"
+                    
                     onChange={(e) => setGender(e.target.value)}
-                    defaultChecked
                   />
-                  <label className="form-check-label bold" htmlFor="male">
+                  <label className="form-check-label" htmlFor="male">
                     Male
                   </label>
                 </div>
@@ -184,7 +189,7 @@ const Register = (props) => {
                     type="radio"
                     name="gender"
                     id="female"
-                    value="option2"
+                    value="female"
                     onChange={(e) => setGender(e.target.value)}
                   />
                   <label className="form-check-label" htmlFor="female">
@@ -200,6 +205,7 @@ const Register = (props) => {
                     className="form-control"
                     id="country"
                     name="country"
+                    
                     onChange={(e) => setCountry(e.target.value)}
                   >
                     <option value="" defaultChecked>
@@ -216,6 +222,7 @@ const Register = (props) => {
                   <label
                     htmlFor="language"
                     className="bold"
+                    
                     name="preferredLanguage"
                   >
                     Preferred Language
@@ -246,6 +253,7 @@ const Register = (props) => {
                     className="form-control"
                     id="password"
                     placeholder="Enter Password"
+                    
                     onChange={(e) => setPassword(e.target.value)}
                   />
                 </div>
@@ -260,6 +268,7 @@ const Register = (props) => {
                     className="form-control"
                     id="cnfpassword"
                     placeholder="Password Again"
+                    
                     onChange={(e) => setConfirmPassword(e.target.value)}
                   />
                 </div>
@@ -277,14 +286,12 @@ const Register = (props) => {
               </form>
               <div>
                 <b>
-                  Already have an account? <a href="/login">Login</a>
+                  Already have an account? <Link href="/login"><strong>Login</strong></Link>
                 </b>
               </div>
             </div>
           </div>
         </div>
-        <br></br>
-        <br></br>
       </div>
     </>
   );
