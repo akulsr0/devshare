@@ -5,6 +5,10 @@ import Country from '../utils/countryArray';
 import Link from 'next/link';
 import BlackButton from '../components/BlackButton';
 
+// import useSWR from 'swr';
+import axios from 'axios';
+// import Router from 'next/router';
+
 const Register = (props) => {
   const [name, setName] = useState('');
   const [username, setUsername] = useState('');
@@ -15,21 +19,77 @@ const Register = (props) => {
   const [preferredLanguage, setPreferredLanguage] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
+  const [isRegistering, setIsRegistering] = useState(false);
 
   const registerUser = (event) => {
     event.preventDefault();
-    console.log({
-      name,
-      username,
-      email,
-      bio,
-      gender,
-      country,
-      preferredLanguage,
-      password,
-      confirmPassword,
-    });
-    // FIXME: Gender not fetching
+    setIsRegistering(true);
+
+    if (name === '') {
+      setIsRegistering(false);
+      return window.alert('Enter Name');
+    }
+    if (username === '') {
+      setIsRegistering(false);
+      return window.alert('Enter Username');
+    }
+    if (bio === '') {
+      setIsRegistering(false);
+      return window.alert('Enter Bio');
+    }
+    if (email === '') {
+      setIsRegistering(false);
+      return window.alert('Enter Email');
+    }
+    if (gender === '') {
+      setIsRegistering(false);
+      return window.alert('Enter Gender');
+    }
+    if (country === '') {
+      setIsRegistering(false);
+      return window.alert('Enter Country');
+    }
+
+    if (preferredLanguage === '') {
+      setIsRegistering(false);
+      return window.alert('Select a Preferred Language');
+    }
+
+    if (password !== confirmPassword) {
+      setIsRegistering(false);
+      return window.alert("Password don't match");
+    } else {
+      if (password.length < 8) {
+        setIsRegistering(false);
+        return window.alert('Password must be of 8 characters or more');
+      }
+    }
+
+    axios
+      .post('/api/register', {
+        name,
+        username,
+        email,
+        bio,
+        gender,
+        country,
+        preferredLanguage,
+        password,
+        confirmPassword,
+      })
+      .then(({ data }) => {
+        setIsRegistering(false);
+        if (data.success) {
+          return window.alert('User Registered');
+        }
+        if (data.userExist) {
+          return window.alert('User already exists');
+        }
+      })
+      .catch((err) => {
+        setIsRegistering(false);
+        console.log(err);
+      });
   };
 
   return (
@@ -170,11 +230,10 @@ const Register = (props) => {
                     type="radio"
                     name="gender"
                     id="male"
-                    value="option1"
+                    value="Male"
                     onChange={(e) => setGender(e.target.value)}
-                    defaultChecked
                   />
-                  <label className="form-check-label bold" htmlFor="male">
+                  <label className="form-check-label" htmlFor="male">
                     Male
                   </label>
                 </div>
@@ -184,7 +243,7 @@ const Register = (props) => {
                     type="radio"
                     name="gender"
                     id="female"
-                    value="option2"
+                    value="Female"
                     onChange={(e) => setGender(e.target.value)}
                   />
                   <label className="form-check-label" htmlFor="female">
@@ -272,19 +331,25 @@ const Register = (props) => {
                     >
                       Sign Up
                     </button>
+                    {isRegistering ? (
+                      <img src="https://i.imgur.com/RlS6YST.gif" />
+                    ) : (
+                      <div></div>
+                    )}
                   </center>
                 </div>
               </form>
               <div>
                 <b>
-                  Already have an account? <a href="/login">Login</a>
+                  Already have an account?{' '}
+                  <Link href="/login">
+                    <strong style={{ cursor: 'pointer' }}>Login</strong>
+                  </Link>
                 </b>
               </div>
             </div>
           </div>
         </div>
-        <br></br>
-        <br></br>
       </div>
     </>
   );

@@ -1,5 +1,6 @@
 import '../../utils/db';
 import User from '../../models/User';
+import bcrypt from 'bcrypt';
 
 export default async (req, res) => {
   const method = req.method;
@@ -23,9 +24,13 @@ export default async (req, res) => {
         const userExistEmailBool = Boolean(userExistEmail[0]);
 
         if (userExistEmailBool || userExistUsernameBool) {
-          return res.json({ success: false, msg: 'User already exists' });
+          return res.status(201).json({
+            success: false,
+            msg: 'User already exists',
+            userExist: true,
+          });
         }
-
+        const hashPass = await bcrypt.hash(password, 10);
         const user = new User({
           name,
           username,
@@ -34,7 +39,7 @@ export default async (req, res) => {
           bio,
           email,
           preferredLanguage,
-          password,
+          password: hashPass,
         });
         await user.save();
         res
