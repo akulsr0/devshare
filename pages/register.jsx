@@ -107,7 +107,7 @@ const Register = (props) => {
             }}
           >
             <div className="card-body">
-              <form>
+              <form method="POST">
                 <center>
                   <h4 className="extra-bold">User Registeration</h4>
                 </center>
