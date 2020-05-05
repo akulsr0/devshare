@@ -1,5 +1,5 @@
-const jwtsec = 'secretsecret' || process.env.jwtsecret;
-const dburl = 'mongodb://localhost:27017/devshare' || process.env.dburl;
+const jwtsec = process.env.jwtsecret || 'secretsecret';
+const dburl = process.env.dburl || 'mongodb://localhost:27017/devshare';
 
 defaults = {
   jwtsecret: jwtsec,
