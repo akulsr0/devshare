@@ -7,6 +7,7 @@ import CategoriesView from '../components/CategoriesView';
 import DevelopersView from '../components/DevelopersView';
 import Dashboard from '../components/Dashboard/Dashboard';
 import Loading from '../components/Loading';
+import Router from 'next/router';
 
 const Index = () => {
   const { data } = useSWR('/api/auth', fetcher);
@@ -42,7 +43,12 @@ const Index = () => {
               developer community to get the perfect audience.
             </h5>
           </div>
-          <BlackButton title="Get Started"></BlackButton>
+          <button
+            className="black-button"
+            onClick={() => Router.push('/register')}
+          >
+            Get Started
+          </button>
           <img
             src="https://assets-ouch.icons8.com/download/301/f5eb9da0-37ec-451c-b83e-5c3754e96414.svg?filename=clip-programming.svg"
             className="feature-image"
