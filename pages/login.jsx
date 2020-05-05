@@ -14,11 +14,13 @@ const Login = () => {
   }
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const [isLoggingIn, setLoggingIn] = useState(false);
 
   const loginUser = (event) => {
     event.preventDefault();
-
+    setLoggingIn(true);
     if (username === '' || password === '') {
+      setLoggingIn(false);
       return window.alert('Enter all fields');
     }
 
@@ -29,10 +31,14 @@ const Login = () => {
       })
       .then((res) => {
         if (!res.data.loginSuccess) {
+          setLoggingIn(false);
           return window.alert(res.data.msg);
         }
       })
-      .catch((err) => console.log(err));
+      .catch((err) => {
+        setLoggingIn(false);
+        console.log(err);
+      });
   };
   return (
     <div>
@@ -148,6 +154,11 @@ const Login = () => {
                     >
                       Login
                     </button>
+                    {isLoggingIn ? (
+                      <img src="https://i.imgur.com/RlS6YST.gif" />
+                    ) : (
+                      <div></div>
+                    )}
                   </center>
                 </div>
               </form>

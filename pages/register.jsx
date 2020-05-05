@@ -4,11 +4,19 @@ import Head from 'next/head';
 import Country from '../utils/countryArray';
 import Link from 'next/link';
 
-// import useSWR from 'swr';
+import useSWR from 'swr';
+import fetcher from '../utils/fetcher';
 import axios from 'axios';
-// import Router from 'next/router';
+import Router from 'next/router';
+
+import Loading from '../components/Loading';
 
 const Register = (props) => {
+  const { data } = useSWR('/api/auth', fetcher);
+  if (data) {
+    Router.push('/');
+  }
+
   const [name, setName] = useState('');
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');

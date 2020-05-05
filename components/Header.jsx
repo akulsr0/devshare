@@ -12,10 +12,18 @@ const Header = () => {
       </div>
       <div className="menu-items px-2">
         <h6 className="pl-3">Projects</h6>
-        <h6 className="pl-3">Categories</h6>
-        <h6 className="pl-3">Developers</h6>
-        <h6 className="pl-3">About Us</h6>
-        <h6 className="pl-3">Contact Us</h6>
+        <h6 className="pl-3" style={{ cursor: 'pointer' }}>
+          Categories
+        </h6>
+        <h6 className="pl-3" style={{ cursor: 'pointer' }}>
+          Developers
+        </h6>
+        <h6 className="pl-3" style={{ cursor: 'pointer' }}>
+          About Us
+        </h6>
+        <h6 className="pl-3" style={{ cursor: 'pointer' }}>
+          Contact Us
+        </h6>
       </div>
       <div className="login-header-div">
         <a href="/login">
