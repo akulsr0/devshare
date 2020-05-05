@@ -3,6 +3,8 @@ import User from '../../models/User';
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
 
+import { jwtsecret } from '../../utils/default';
+
 export default async (req, res) => {
   const method = req.method;
   switch (method) {
@@ -14,7 +16,7 @@ export default async (req, res) => {
         if (user) {
           const authResult = await bcrypt.compare(password, user.password);
           if (authResult) {
-            const token = jwt.sign({ id: user._id }, 'secretsecret', {
+            const token = jwt.sign({ id: user._id }, jwtsecret, {
               expiresIn: '24h',
             });
             res.setHeader('Content-Type', 'text/plain');

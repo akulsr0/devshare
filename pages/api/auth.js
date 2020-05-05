@@ -1,5 +1,6 @@
 import '../../utils/db';
 import jwt from 'jsonwebtoken';
+import { jwtsecret } from '../../utils/default';
 
 export default async (req, res) => {
   const method = req.method;
@@ -9,7 +10,7 @@ export default async (req, res) => {
         const tokenCookie = req.headers.cookie;
         if (tokenCookie != undefined && tokenCookie.split('=')[1].length > 1) {
           const token = tokenCookie.split('=')[1];
-          const decoded = jwt.verify(token, 'secretsecret');
+          const decoded = jwt.verify(token, jwtsecret);
           return res.json(decoded);
         }
         return res.status(200).end();
