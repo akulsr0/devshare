@@ -48,7 +48,7 @@ const DashboardHeader = ({ user }) => {
         >
           <Button variant="none" className="m-0 p-0 mb-2">
             <img
-              src="https://github.com/akulsr0.png?size=400"
+              src={`https://github.com/${user.username}.png?size=400`}
               alt=""
               style={{ borderRadius: '50%', width: 30 }}
             />
@@ -88,7 +88,7 @@ const DashboardHeader = ({ user }) => {
         >
           <Button variant="none" className="m-0 p-0 mb-2">
             <img
-              src="https://github.com/akulsr0.png?size=400"
+              src={`https://github.com/${user.username}.png?size=400`}
               alt=""
               style={{ borderRadius: '50%', width: 30 }}
             />
