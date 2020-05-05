@@ -10,7 +10,9 @@ import Router from 'next/router';
 const Login = () => {
   const { data } = useSWR('/api/auth', fetcher);
   if (data) {
-    Router.push('/');
+    if (data.user !== null) {
+      Router.push('/');
+    }
   }
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');

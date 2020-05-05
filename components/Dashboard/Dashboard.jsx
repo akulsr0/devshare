@@ -1,10 +1,16 @@
 import DashboardHeader from './DashboardHeader';
-
-const Dashboard = (props) => {
+import Head from 'next/head';
+const Dashboard = ({ data }) => {
+  console.log(data);
   return (
-    <div style={{ backgroundColor: '#bfdaff' }}>
-      <DashboardHeader />
-    </div>
+    <>
+      <Head>
+        <title>{data.user.name}</title>
+      </Head>
+      <div style={{ backgroundColor: '#bfdaff' }}>
+        <DashboardHeader user={data.user} />
+      </div>
+    </>
   );
 };
 

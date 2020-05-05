@@ -3,7 +3,7 @@ import Link from 'next/link';
 import axios from 'axios';
 import Router from 'next/router';
 
-const DashboardHeader = (props) => {
+const DashboardHeader = ({ user }) => {
   const logout = (event) => {
     event.preventDefault();
     axios
@@ -15,8 +15,8 @@ const DashboardHeader = (props) => {
   };
 
   return (
-    <div className="header container pt-2">
-      <div className="header-title-div">
+    <div className="header container pt-1">
+      <div className="header-title-div m-0">
         <Link href="/">
           <h2 style={{ fontWeight: 800 }}>DevShare</h2>
         </Link>
@@ -43,9 +43,7 @@ const DashboardHeader = (props) => {
             <Popover className="menu-content" id={`popover-positioned-bottom`}>
               <Popover.Content className="menu-content ">
                 {/* UserOptions */}
-                <h6 style={{ fontWeight: 700, marginTop: 6 }}>
-                  Akul Srivastava
-                </h6>
+                <h6 style={{ fontWeight: 700, marginTop: 6 }}>{user.name}</h6>
                 <h6 style={{ fontWeight: 300 }}>My Projects</h6>
                 <h6 style={{ fontWeight: 300 }}>Categories</h6>
                 <h6 style={{ fontWeight: 300 }}>Developers</h6>
