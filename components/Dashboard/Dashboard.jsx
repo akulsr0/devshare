@@ -1,7 +1,6 @@
 import DashboardHeader from './DashboardHeader';
 import Head from 'next/head';
 const Dashboard = ({ data }) => {
-  console.log(data);
   return (
     <>
       <Head>

@@ -11,11 +11,12 @@ import Loading from '../components/Loading';
 const Index = () => {
   const { data } = useSWR('/api/auth', fetcher);
 
+  console.log(process);
+
   if (!data) {
     return <Loading />;
   }
   if (data.user !== null) {
-    console.log();
     return <Dashboard data={data} />;
   }
 
