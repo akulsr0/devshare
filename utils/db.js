@@ -1,5 +1,5 @@
 import mongoose from 'mongoose';
-const dburl = 'mongodb://localhost:27017/devshare' || process.env.dburl;
+import { dburl } from './default';
 
 mongoose.connect(
   dburl,

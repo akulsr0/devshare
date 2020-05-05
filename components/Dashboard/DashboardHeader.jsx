@@ -1,9 +1,19 @@
-import BlackButton from '../BlackButton';
 import { OverlayTrigger, Popover, Button } from 'react-bootstrap';
-import Router from 'next/router';
 import Link from 'next/link';
+import axios from 'axios';
+import Router from 'next/router';
 
 const DashboardHeader = (props) => {
+  const logout = (event) => {
+    event.preventDefault();
+    axios
+      .post('/api/logout')
+      .then((res) => {
+        Router.reload();
+      })
+      .catch((err) => console.log(err));
+  };
+
   return (
     <div className="header container pt-2">
       <div className="header-title-div">
@@ -18,7 +28,11 @@ const DashboardHeader = (props) => {
         <h6 className="pl-3">About Us</h6>
         <h6 className="pl-3">Contact Us</h6>
       </div>
-      <div className="login-header-div">{/* USER OPTIONS */}</div>
+      <div className="login-header-div">
+        <button className="black-button" onClick={logout}>
+          Logout
+        </button>
+      </div>
       <div className="menu-div">
         <OverlayTrigger
           trigger="click"
@@ -39,7 +53,9 @@ const DashboardHeader = (props) => {
                 <h6 style={{ fontWeight: 300, marginBottom: 12 }}>
                   Contact Us
                 </h6>
-                <BlackButton title="Logout"></BlackButton>
+                <button className="black-button" onClick={logout}>
+                  Logout
+                </button>
               </Popover.Content>
             </Popover>
           }

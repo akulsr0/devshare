@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 const Header = () => {
   return (
-    <div className="header container pt-2">
+    <div className="header container pt-2 pb-2">
       <div className="header-title-div">
         <Link href="/">
           <h2 style={{ fontWeight: 800, cursor: 'pointer' }}>DevShare</h2>
@@ -18,7 +18,7 @@ const Header = () => {
         <h6 className="pl-3">Contact Us</h6>
       </div>
       <div className="login-header-div">
-        <a href="/register">
+        <a href="/login">
           <BlackButton title="Login/SignUp"></BlackButton>
         </a>
       </div>
@@ -38,7 +38,7 @@ const Header = () => {
                 <h6 style={{ fontWeight: 300, marginBottom: 12 }}>
                   Contact Us
                 </h6>
-                <a href="/register">
+                <a href="/login">
                   <BlackButton title="Login/SignUp"></BlackButton>
                 </a>
               </Popover.Content>

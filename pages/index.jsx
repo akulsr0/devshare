@@ -1,10 +1,19 @@
+import useSWR from 'swr';
+import fetcher from '../utils/fetcher';
 import Head from 'next/head';
 import BlackButton from '../components/BlackButton';
 import Header from '../components/Header';
 import CategoriesView from '../components/CategoriesView';
 import DevelopersView from '../components/DevelopersView';
+import Dashboard from '../components/Dashboard/Dashboard';
+import Loading from '../components/Loading';
 
 const Index = () => {
+  const { data } = useSWR('/api/auth', fetcher);
+  if (data) {
+    return <Dashboard />;
+  }
+
   return (
     <div>
       <Head>

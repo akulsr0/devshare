@@ -3,7 +3,6 @@ import { useState } from 'react';
 import Head from 'next/head';
 import Country from '../utils/countryArray';
 import Link from 'next/link';
-import BlackButton from '../components/BlackButton';
 
 // import useSWR from 'swr';
 import axios from 'axios';
@@ -112,9 +111,9 @@ const Register = (props) => {
             <h6 className="pl-3">Contact Us</h6>
           </div>
           <div className="login-header-div">
-            <a href="/login">
-              <BlackButton title="Login"></BlackButton>
-            </a>
+            <Link href="/login">
+              <button className="black-button">Login</button>
+            </Link>
           </div>
           <div className="menu-div">
             <OverlayTrigger
@@ -135,9 +134,9 @@ const Register = (props) => {
                     <h6 style={{ fontWeight: 300, marginBottom: 12 }}>
                       Contact Us
                     </h6>
-                    <a href="/login">
-                      <BlackButton title="Login"></BlackButton>
-                    </a>
+                    <Link href="/login">
+                      <button className="black-button">Login</button>
+                    </Link>
                   </Popover.Content>
                 </Popover>
               }
