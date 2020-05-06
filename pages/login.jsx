@@ -38,6 +38,10 @@ const Login = () => {
           setLoggingIn(false);
           return window.alert(res.data.msg);
         }
+
+        if (res.data.user !== null) {
+          Router.push('/');
+        }
       })
       .catch((err) => {
         setLoggingIn(false);

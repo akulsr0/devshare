@@ -12,8 +12,8 @@ export default async (req, res) => {
         if (tokenCookie != undefined && tokenCookie.split('=')[1].length > 1) {
           const token = tokenCookie.split('=')[1];
           const decoded = jwt.verify(token, jwtsecret);
-          const user = await User.find({ id: decoded._id }).select('-password');
-          return res.json({ decoded, user: user[0] });
+          const user = await User.findById(decoded.id).select('-password');
+          return res.json({ decoded, user });
         }
         return res.status(200).json({ user: null });
       } catch (error) {

@@ -12,6 +12,7 @@ const Index = () => {
   const { data } = useSWR('/api/auth', fetcher);
 
   if (data) {
+    console.log(data);
     if (data.user !== null) {
       return <Dashboard data={data} />;
     }
